@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 
-contract Nova is ERC20, Ownable {
+contract Token is ERC20, Ownable {
     using SafeMath for uint256;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
@@ -44,7 +44,7 @@ contract Nova is ERC20, Ownable {
     event TaxWalletUpdated(address indexed newWallet, address indexed oldWallet);
     event SwapAndLiquify(uint256 tokensSwapped, uint256 ethReceived, uint256 tokensIntoLiquidity);
 
-    constructor() ERC20("Nova AI", "NOVA") {
+    constructor() ERC20("Token", "T") {
         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
 
         excludeFromMaxTransaction(address(_uniswapV2Router), true);
